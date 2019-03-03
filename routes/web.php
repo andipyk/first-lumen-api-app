@@ -48,3 +48,16 @@ $router->get('profile', function()
 $router->get('profile/tes', ['as' => 'route.profile', function() {
   return route('route.profile');
 }]);
+
+$router->group(['prefix' => 'admin', 'middleware' => 'auth'], function() use($router)
+{
+  $router->get('home', function()
+  {
+    return 'Home Admin';
+  });
+
+  $router->get('profile', function()
+  {
+    return 'Profile Admin';
+  });
+});
