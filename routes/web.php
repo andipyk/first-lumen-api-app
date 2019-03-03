@@ -5,10 +5,9 @@ $router->get('/', function () use ($router) {
 });
 
 
-$router->get('/key', function()
-{
-  return str_random(32);
-});
+$router->get('key', 'ExampleController@generateKey' );
+
+$router->post('foo', 'ExampleController@fooExample');
 
 // http://lumen-blog.test/admin/home?age=20
 $router->get('admin/home', ['middleware' => 'age', function()
