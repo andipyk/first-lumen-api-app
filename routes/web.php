@@ -9,6 +9,11 @@ $router->get('key', 'ExampleController@generateKey' );
 
 $router->post('foo', 'ExampleController@fooExample');
 
+$router->get('user/{id}', 'ExampleController@getUser');
+
+$router->post('post/cat1/{cat1}/cat2/{cat2}', 'ExampleController@getPost');
+$router->get('post/cat1/{cat1}/cat2/{cat2}', 'ExampleController@getPost');
+
 // http://lumen-blog.test/admin/home?age=20
 $router->get('admin/home', ['middleware' => 'age', function()
 {

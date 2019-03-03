@@ -22,4 +22,13 @@ class ExampleController extends Controller
     public function fooExample(){
       return 'ExampleController@fooExample';
     }
+
+    public function getUser($id){
+      return $id;
+    }
+
+    public function getPost($cat1, $cat2)
+    {
+      return 'cat 1 | cat 2 => '.$cat1.' | '.$cat2;
+    }
 }
