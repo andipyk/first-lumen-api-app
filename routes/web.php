@@ -22,7 +22,19 @@ $router->get('/key', function()
 });
 
 
-$router->get('/foo', function()
+$router->get('/user/{id}', function($id)
 {
-  return 'Hello, GET Method!';
+  return 'User id = '.$id;
+});
+
+$router->get('/post/{postID}/comments/{commentID}', function($postID, $commentID)
+{
+  return 'Post Id = '.$postID.' -- Comment Id = '.$commentID;
+});
+
+
+// ################### Menambahkan [ ] untuk opsional ###################
+$router->get('/params[/{paramId}]', function($paramId = null)
+{
+  return 'Params = '.$paramId;
 });
