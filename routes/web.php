@@ -38,3 +38,13 @@ $router->get('/params[/{paramId}]', function($paramId = null)
 {
   return 'Params = '.$paramId;
 });
+
+// ################### Menambahkan aliases + redirect ###################
+$router->get('profile', function()
+{
+    return redirect()->route('route.profile');
+});
+
+$router->get('profile/tes', ['as' => 'route.profile', function() {
+  return route('route.profile');
+}]);
