@@ -31,4 +31,13 @@ class ExampleController extends Controller
     {
       return 'cat 1 | cat 2 => '.$cat1.' | '.$cat2;
     }
+
+    public function getProfile()
+    {
+      echo "<a href='".route('profile.action')."'>Ke TKP</a>";
+    }
+    public function getProfileAction()
+    {
+      echo "<a href='".route('profile')."'>Balik ke markas gan</a>";
+    }
 }
