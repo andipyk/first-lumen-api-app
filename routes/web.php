@@ -11,6 +11,9 @@ $router->post('foo', 'ExampleController@fooExample');
 
 $router->get('user/{id}', 'ExampleController@getUser');
 
+$router->get('foo/bar', 'ExampleController@fooBar');
+$router->post('bar/foo', 'ExampleController@fooBar');
+
 // give controller name
 
 $router->get('profile', ['as' => 'profile', 'uses' => 'ExampleController@getProfile']);

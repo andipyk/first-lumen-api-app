@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use \Illuminate\Http\Request;
 
 class ExampleController extends Controller
 {
@@ -12,7 +13,7 @@ class ExampleController extends Controller
     public function __construct()
     {
         // $this->middleware('age', ['only' => ['getUser']]);
-        $this->middleware('age', ['except' => ['getUser']]);
+        // $this->middleware('age', ['except' => ['getUser']]);
 
     }
 
@@ -41,5 +42,20 @@ class ExampleController extends Controller
     public function getProfileAction()
     {
       echo "<a href='".route('profile')."'>Balik ke markas gan</a>";
+    }
+
+    public function fooBar(Request $request)
+    {
+      // if ($request->is('foo/bar')) {
+      //   // code...
+      //   return 'Success';
+      // } else {
+      //   // code...
+      //   return 'Fail';
+      // }
+      // return $request->path();
+
+      return $request->method();
+
     }
 }
